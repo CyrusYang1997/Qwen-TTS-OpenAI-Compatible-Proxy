@@ -2,8 +2,8 @@
 
 将阿里云百炼 Qwen-TTS 接口包装成 OpenAI API 兼容形式的代理服务。
 
-## OpenClaw使用，
-将以下内容加入openclaw.config中
+## OpenClaw使用
+将以下内容加入openclaw.config中，运行start.bat
 
 ```
 "messages": {
@@ -44,7 +44,7 @@ DASHSCOPE_API_KEY=sk-your-api-key-here
 ```bash
 curl http://localhost:8000/v1/audio/speech \
   -H "Content-Type: application/json" \
-  -d '{"model":"qwen3-tts-flash","input":"你好，世界！","voice":"alloy"}' \
+  -d '{"model":"qwen3-tts-flash","input":"你好，欢迎使用语音合成服务。这是一段测试语音。","voice":"alloy"}' \
   --output speech.mp3
 ```
 
@@ -57,7 +57,7 @@ client = OpenAI(base_url="http://localhost:8000/v1", api_key="sk-your-key")
 response = client.audio.speech.create(
     model="qwen3-tts-flash",
     voice="alloy",
-    input="你好，世界！"
+    input="你好，欢迎使用语音合成服务。这是一段测试语音。"
 )
 response.stream_to_file("output.mp3")
 ```
