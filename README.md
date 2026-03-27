@@ -2,6 +2,20 @@
 
 将阿里云百炼 Qwen-TTS 接口包装成 OpenAI API 兼容形式的代理服务。
 
+## OpenClaw使用，
+将以下内容加入openclaw.config中
+"messages": {
+    "tts": {
+      "auto": "tagged",
+      "provider": "openai",
+      "openai": {
+        "apiKey": "sk-**************",
+        "baseUrl": "http://localhost:8000/v1",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice": "Cherry"
+      }
+    }
+
 ## 快速开始
 
 ### 1. 获取 API Key
