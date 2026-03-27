@@ -4,6 +4,8 @@
 
 ## OpenClaw使用，
 将以下内容加入openclaw.config中
+
+```
 "messages": {
     "tts": {
       "auto": "tagged",
@@ -15,6 +17,7 @@
         "voice": "Cherry"
       }
     }
+```
 
 ## 快速开始
 
